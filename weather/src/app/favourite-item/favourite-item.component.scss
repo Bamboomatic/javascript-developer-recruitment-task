@@ -1,0 +1,19 @@
+.fav-city {
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 0 0 2px 2px lightgrey;
+  position: relative;
+  width: 30%;
+}
+
+.unFavBtn {
+  color: rgb(167, 167, 167);
+  float: right;
+  font-size: 30px;
+}
+
+.unFavBtn:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
