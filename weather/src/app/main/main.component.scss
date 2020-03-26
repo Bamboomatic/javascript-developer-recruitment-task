@@ -1,0 +1,22 @@
+.main-container {
+}
+.input {
+  input {
+    width: 90%;
+  }
+
+  button {
+    width: 10%;
+  }
+}
+
+.main-table {
+  width: 60vw;
+  padding-top: 20px;
+  td {
+    border-radius: 2px;
+  }
+  tr:nth-child(odd) {
+    background-color: rgb(187, 233, 255);
+  }
+}

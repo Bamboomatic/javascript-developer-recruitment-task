@@ -1,6 +1,34 @@
-<div>
-  <fa-icon [icon]="faSun"></fa-icon>
-  <fa-icon [icon]="faCloud"></fa-icon>
-  <fa-icon [icon]="faCloudSun"></fa-icon>
-  <fa-icon [icon]="faCloudRain"></fa-icon>
+<div class="main-container">
+  <div class="input">
+    <input type="text" #userInput placeholder="Enter City name here" /><button
+      class="inputBtn"
+      (click)="getCityName(userInput.value)"
+    >
+      <fa-icon [icon]="faSearchLocation"></fa-icon>
+    </button>
+  </div>
+
+  <table class="main-table" *ngIf="weather">
+    <tr>
+      <td>CITY:</td>
+      <td>{{ weather.name }}</td>
+    </tr>
+    <tr>
+      <td>COUNTRY PREFIX:</td>
+      <td>{{ weather.sys.country }}</td>
+    </tr>
+    <tr>
+      <td>DESCRIPTION:</td>
+      <td>{{ weather.weather[0].description }}</td>
+    </tr>
+    <tr>
+      <td>HUMIDITY:</td>
+      <td>{{ weather.main.humidity }}</td>
+    </tr>
+  </table>
 </div>
+
+<!-- <fa-icon [icon]="faSun"></fa-icon>
+<fa-icon [icon]="faCloud"></fa-icon>
+<fa-icon [icon]="faCloudSun"></fa-icon>
+<fa-icon [icon]="faCloudRain"></fa-icon> -->

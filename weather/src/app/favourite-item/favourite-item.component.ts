@@ -25,5 +25,6 @@ export class FavouriteItemComponent implements OnInit {
 
   onUnFav = fav => {
     console.log(this.fav.name + " will be deleted");
+    // here code for deleting city from favourites
   };
 }

@@ -1,12 +1,16 @@
-<h1 class="title">Weather</h1>
-<nav>
-  <a routerLink="/main" routerLinkActive="active">Weather Main Page</a>
-  <a routerLink="/favourites" routerLinkActive="active">Favourite Cities</a>
-</nav>
-<div [@routeAnimation]="getAnimationData(routerOutlet)">
-  <router-outlet #routerOutlet="outlet"></router-outlet>
-</div>
-<app-main></app-main>
-<app-favourites></app-favourites>
+<div class="wrapper">
+  <div class="header">
+    <h1 class="title">Weather</h1>
+    <nav class="nav">
+      <a routerLink="/main" routerLinkActive="active">Weather Main Page </a>
+      <a routerLink="/favourites" routerLinkActive="active">
+        Favourite Cities</a
+      >
+    </nav>
+  </div>
+  <div [@routeAnimation]="getAnimationData(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

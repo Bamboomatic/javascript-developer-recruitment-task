@@ -23,3 +23,33 @@ button {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(120, 224, 253, 0.185);
+  height: 100vh;
+}
+
+.header {
+  h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
+  nav {
+    width: 100%;
+    margin: 10px 0px;
+    a {
+      text-decoration: none;
+      background-color: #369;
+      margin: 10px 5px;
+      padding: 5px;
+      border-radius: 4px;
+      color: ivory;
+    }
+    a:hover {
+      box-shadow: 0 0 2px 1px black;
+    }
+  }
+}
