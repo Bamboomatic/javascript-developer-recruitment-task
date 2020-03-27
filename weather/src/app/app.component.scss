@@ -12,6 +12,7 @@ h3 {
 }
 body {
   margin: 2em;
+  background-color: rgba(120, 224, 253, 0.185);
 }
 body,
 input[type="text"],
@@ -28,8 +29,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(120, 224, 253, 0.185);
-  height: 100vh;
 }
 
 .header {

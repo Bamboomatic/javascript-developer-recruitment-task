@@ -1,1 +1,48 @@
-<p>details works!</p>
+<div>
+  <div class="city-name">Forecast for {{ forecast?.city.name }}</div>
+  <table *ngFor="let fav of forecast?.list">
+    <thead>
+      <tr>
+        <th colspan="2">{{ fav.dt_txt }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>temp</td>
+        <td>{{ fav.main.temp }}&#8451;</td>
+      </tr>
+      <tr>
+        <td>pressure</td>
+        <td>{{ fav.main.pressure }}hPa</td>
+      </tr>
+      <tr>
+        <td>humidity</td>
+        <td>{{ fav.main.humidity }}%</td>
+      </tr>
+      <tr>
+        <td>description</td>
+        <td>{{ fav.weather[0].description }}</td>
+      </tr>
+      <tr>
+        <td>clouds</td>
+        <td>{{ fav.clouds.all }}%</td>
+      </tr>
+      <tr>
+        <td>wind speed</td>
+        <td>{{ fav.wind.speed }}km/h</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <p>
+  tutaj ma zapełnić listę w 6 kolumnach (curr, 1, 2, 3, 4, 5) <br />
+  co 3 godziny (0, 3, 6, 9, 12, 15, 18, 21) <br />
+  danymi (<br />
+  main[temp, pressure, humidity]; <br />
+  weather[0][description, icon];<br />
+  clouds.all;<br />
+  wind.speed;<br />
+  dt_txt)
+</p> -->

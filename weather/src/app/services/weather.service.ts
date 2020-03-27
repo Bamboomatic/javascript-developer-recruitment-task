@@ -7,6 +7,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 export class WeatherService {
   favouritesUrl = "https://api.openweathermap.org/data/2.5/weather";
   apiKey = "8a49f18f401904376ca92de2c7ef2aa0";
+  currentId: number;
 
   constructor(private http: HttpClient) {}
 
@@ -20,6 +21,18 @@ export class WeatherService {
   }
 
   getDetailedForcastById(id: number) {
-    console.log(id);
+    return this.http.get(
+      `https://api.openweathermap.org/data/2.5/forecast?id=` +
+        id +
+        `&appid=` +
+        this.apiKey
+    );
+  }
+  getCurrentId() {
+    return this.currentId;
+  }
+
+  passId(id: number) {
+    this.currentId = id;
   }
 }

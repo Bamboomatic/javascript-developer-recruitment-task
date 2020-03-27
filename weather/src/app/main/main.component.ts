@@ -38,7 +38,11 @@ export class MainComponent implements OnInit {
     this.getCityName("Londyn");
   }
 
-  toFavs(weather) {
+  getCityId(id: number) {
+    this.weatherService.passId(id);
+  }
+
+  toFavs(weather: object) {
     this.favouriteService.makeFavs(weather);
   }
 
