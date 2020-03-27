@@ -18,4 +18,8 @@ export class WeatherService {
 
     return this.http.get(this.favouritesUrl, { params });
   }
+
+  getDetailedForcastById(id: number) {
+    console.log(id);
+  }
 }

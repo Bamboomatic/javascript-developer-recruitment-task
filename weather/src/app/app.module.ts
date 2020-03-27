@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FavouritesComponent } from "./favourites/favourites.component";
 import { MainComponent } from "./main/main.component";
 import { FavouriteItemComponent } from "./favourite-item/favourite-item.component";
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FavouritesComponent,
     MainComponent,
-    FavouriteItemComponent
+    FavouriteItemComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

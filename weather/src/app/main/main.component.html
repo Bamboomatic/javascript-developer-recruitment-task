@@ -9,10 +9,18 @@
   </div>
 
   <table class="main-table" *ngIf="weather">
-    <tr>
-      <td>CITY:</td>
-      <td>{{ weather.name }}</td>
-    </tr>
+    <thead>
+      <th colspan="2">
+        <fa-icon
+          [icon]="faInfo"
+          routerLink="/details"
+          routerLinkActive="active"
+        >
+        </fa-icon>
+        <span> {{ weather.name }} </span>
+        <fa-icon [icon]="faStar"> </fa-icon>
+      </th>
+    </thead>
     <tr>
       <td>COUNTRY PREFIX:</td>
       <td>{{ weather.sys.country }}</td>

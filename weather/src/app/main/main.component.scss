@@ -13,6 +13,9 @@
 .main-table {
   width: 60vw;
   padding-top: 20px;
+  th {
+    background-color: rgb(174, 229, 255);
+  }
   td {
     border-radius: 2px;
   }

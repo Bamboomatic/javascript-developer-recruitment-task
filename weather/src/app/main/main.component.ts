@@ -7,7 +7,9 @@ import {
   faCloudRain,
   faThermometerHalf,
   faTint,
-  faSearchLocation
+  faSearchLocation,
+  faInfo,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -18,15 +20,19 @@ import {
 export class MainComponent implements OnInit {
   weather;
   faSun = faSun;
+  faStar = faStar;
   faCloud = faCloud;
   faCloudSun = faCloudSun;
   faCloudRain = faCloudRain;
   faThermometerHalf = faThermometerHalf;
   faTint = faTint;
+  faInfo = faInfo;
   faSearchLocation = faSearchLocation;
   constructor(private weatherService: WeatherService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCityName("Londyn");
+  }
 
   getCityName(city: string) {
     this.weatherService.getWeatherByCityName(city).subscribe(data => {
