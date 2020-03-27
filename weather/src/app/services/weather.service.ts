@@ -24,7 +24,7 @@ export class WeatherService {
     return this.http.get(
       `https://api.openweathermap.org/data/2.5/forecast?id=` +
         id +
-        `&appid=` +
+        `&units=metric&appid=` +
         this.apiKey
     );
   }
