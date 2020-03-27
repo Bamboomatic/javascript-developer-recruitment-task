@@ -42,7 +42,7 @@ export class MainComponent implements OnInit {
     this.weatherService.passId(id);
   }
 
-  toFavs(weather: object) {
+  toFavs(weather) {
     this.favouriteService.makeFavs(weather);
   }
 

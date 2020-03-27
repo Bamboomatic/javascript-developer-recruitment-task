@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Favs } from "../models/Favs";
+import { FavouritesService } from "../services/favourites.service";
 import {
   faSun,
   faCity,
@@ -19,12 +20,12 @@ export class FavouriteItemComponent implements OnInit {
   faThermometerHalf = faThermometerHalf;
   faTint = faTint;
 
-  constructor() {}
+  constructor(private favouriteService: FavouritesService) {}
 
   ngOnInit(): void {}
 
-  onUnFav = fav => {
-    console.log(this.fav.name + " will be deleted");
-    // here code for deleting city from favourites
-  };
+  onUnFav(fav) {
+    console.log(fav.name + " will be deleted by id nr:" + fav.id);
+    this.favouriteService.delFav(fav.id);
+  }
 }

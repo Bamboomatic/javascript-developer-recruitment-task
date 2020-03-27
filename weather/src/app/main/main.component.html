@@ -11,6 +11,8 @@
   <table class="main-table" *ngIf="weather">
     <thead>
       <th colspan="2">
+        <span>5-day detailed forecast -></span>
+
         <fa-icon
           [icon]="faInfo"
           (click)="getCityId(weather.id)"
@@ -18,16 +20,17 @@
           routerLinkActive="active"
         >
         </fa-icon>
-        <span> {{ weather.name }} </span>
-        <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon>
+        <b>{{ weather.name }}</b>
+        <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon
+        ><span><- add to favourites</span>
       </th>
     </thead>
     <tr>
-      <td>COUNTRY PREFIX:</td>
+      <td>Country prefix:</td>
       <td>{{ weather.sys.country }}</td>
     </tr>
     <tr>
-      <td>DESCRIPTION:</td>
+      <td>Description:</td>
       <td>{{ weather.weather[0].description }}</td>
     </tr>
     <tr>
@@ -35,7 +38,7 @@
       <td>{{ weather.main.temp }}&#8451;</td>
     </tr>
     <tr>
-      <td>HUMIDITY:</td>
+      <td>Humidity:</td>
       <td>{{ weather.main.humidity }}%</td>
     </tr>
   </table>
