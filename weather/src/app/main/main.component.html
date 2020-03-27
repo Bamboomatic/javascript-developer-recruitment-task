@@ -18,7 +18,7 @@
         >
         </fa-icon>
         <span> {{ weather.name }} </span>
-        <fa-icon [icon]="faStar"> </fa-icon>
+        <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon>
       </th>
     </thead>
     <tr>
@@ -30,8 +30,12 @@
       <td>{{ weather.weather[0].description }}</td>
     </tr>
     <tr>
+      <td>Temperature:</td>
+      <td>{{ weather.main.temp }}&#8451;</td>
+    </tr>
+    <tr>
       <td>HUMIDITY:</td>
-      <td>{{ weather.main.humidity }}</td>
+      <td>{{ weather.main.humidity }}%</td>
     </tr>
   </table>
 </div>

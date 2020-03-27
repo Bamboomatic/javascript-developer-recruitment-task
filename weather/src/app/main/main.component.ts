@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { WeatherService } from "../services/weather.service";
+import { FavouritesService } from "../services/favourites.service";
 import {
   faSun,
   faCloud,
@@ -28,10 +29,17 @@ export class MainComponent implements OnInit {
   faTint = faTint;
   faInfo = faInfo;
   faSearchLocation = faSearchLocation;
-  constructor(private weatherService: WeatherService) {}
+  constructor(
+    private weatherService: WeatherService,
+    private favouriteService: FavouritesService
+  ) {}
 
   ngOnInit(): void {
     this.getCityName("Londyn");
+  }
+
+  toFavs(weather) {
+    this.favouriteService.makeFavs(weather);
   }
 
   getCityName(city: string) {

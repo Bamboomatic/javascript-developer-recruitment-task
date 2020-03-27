@@ -12,6 +12,10 @@ export class YourService {
 export class FavouritesService {
   constructor() {}
 
+  makeFavs(weather) {
+    console.log(`here will be saved ` + weather.name + ` to local storage`);
+  }
+
   getFavs() {
     // mockup return Array
     return [
