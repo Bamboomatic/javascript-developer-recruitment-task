@@ -1,13 +1,17 @@
 import { Injectable } from "@angular/core";
 import { StorageMap } from "@ngx-pwa/local-storage";
-import { Favs } from "../models/Favs";
+import { WeatherService } from "../services/weather.service";
+import { Fav } from "../models/Favs";
 
 @Injectable({
   providedIn: "root"
 })
 export class FavouritesService {
   tempStorage;
-  constructor(private storage: StorageMap) {}
+  constructor(
+    private storage: StorageMap,
+    private weatherService: WeatherService
+  ) {}
 
   makeFavs(weather) {
     console.log(weather);
@@ -29,7 +33,7 @@ export class FavouritesService {
   }
 
   getFavs() {
-    this.storage.get<Favs[]>("2643743").subscribe(data => {
+    this.storage.get<Fav[]>("2643743").subscribe(data => {
       this.tempStorage = data;
     });
 

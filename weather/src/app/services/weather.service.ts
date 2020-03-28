@@ -39,6 +39,16 @@ export class WeatherService {
     return this.http.get(this.url + "forecast", { params });
   }
 
+  getWeatherByCoordinates(lat: string, lon: string) {
+    let params = new HttpParams()
+      .set("lat", lat)
+      .set("lon", lon)
+      .set("units", "metric")
+      .set("appid", this.apiKey);
+
+    return this.http.get(this.url + "weather", { params });
+  }
+
   getCurrentId() {
     return this.currentId;
   }

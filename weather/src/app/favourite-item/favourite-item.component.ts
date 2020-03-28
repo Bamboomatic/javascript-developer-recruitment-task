@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Favs } from "../models/Favs";
 import { FavouritesService } from "../services/favourites.service";
 import {
   faSun,
@@ -14,7 +13,7 @@ import {
   styleUrls: ["./favourite-item.component.scss"]
 })
 export class FavouriteItemComponent implements OnInit {
-  @Input() fav: Favs;
+  @Input()
   faSun = faSun;
   faCity = faCity;
   faThermometerHalf = faThermometerHalf;
@@ -24,8 +23,7 @@ export class FavouriteItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onUnFav(fav) {
-    console.log(fav.name + " will be deleted by id nr:" + fav.id);
-    this.favouriteService.delFav(fav.id);
+  onUnFav() {
+    console.log(this + " will be deleted by id nr:");
   }
 }

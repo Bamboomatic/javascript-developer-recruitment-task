@@ -1,4 +1,4 @@
-export class Favs {
+export class Fav {
   id: number;
   name: string;
   temp: number;

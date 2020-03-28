@@ -7,41 +7,58 @@
       <fa-icon [icon]="faSearchLocation"></fa-icon>
     </button>
   </div>
+  <div *ngIf="weather">
+    <table class="main-table">
+      <thead>
+        <th colspan="2">
+          <span>5-day detailed forecast -></span>
 
-  <table class="main-table" *ngIf="weather">
-    <thead>
-      <th colspan="2">
-        <span>5-day detailed forecast -></span>
+          <fa-icon
+            [icon]="faInfo"
+            (click)="getCityId(weather.id)"
+            routerLink="/details"
+            routerLinkActive="active"
+          >
+          </fa-icon>
+          <b>{{ weather.name }}</b>
+          <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon
+          ><span><- add to favourites</span>
+        </th>
+      </thead>
+      <tr>
+        <td>Country prefix:</td>
+        <td>{{ weather.sys.country }}</td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td>{{ weather.weather[0].description }}</td>
+      </tr>
+      <tr>
+        <td>Temperature:</td>
+        <td>{{ weather.main.temp }}&#8451;</td>
+      </tr>
+      <tr>
+        <td>Pressure:</td>
+        <td>{{ weather.main.pressure }}hPa</td>
+      </tr>
+      <tr>
+        <td>Sunrise:</td>
+        <td>{{ weather.sys.sunrise * 1000 | date: "H:mm" }}</td>
+      </tr>
+      <tr>
+        <td>Sunset:</td>
+        <td>{{ weather.sys.sunset * 1000 | date: "H:mm" }}</td>
+      </tr>
+      <tr>
+        <td>Coordinates:</td>
+        <td>[Lat: {{ weather.coord.lat }}, Lon: {{ weather.coord.lon }}]</td>
+      </tr>
+    </table>
 
-        <fa-icon
-          [icon]="faInfo"
-          (click)="getCityId(weather.id)"
-          routerLink="/details"
-          routerLinkActive="active"
-        >
-        </fa-icon>
-        <b>{{ weather.name }}</b>
-        <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon
-        ><span><- add to favourites</span>
-      </th>
-    </thead>
-    <tr>
-      <td>Country prefix:</td>
-      <td>{{ weather.sys.country }}</td>
-    </tr>
-    <tr>
-      <td>Description:</td>
-      <td>{{ weather.weather[0].description }}</td>
-    </tr>
-    <tr>
-      <td>Temperature:</td>
-      <td>{{ weather.main.temp }}&#8451;</td>
-    </tr>
-    <tr>
-      <td>Humidity:</td>
-      <td>{{ weather.main.humidity }}%</td>
-    </tr>
-  </table>
+    <agm-map class="map" [latitude]="lat" [longitude]="lon">
+      <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+    </agm-map>
+  </div>
 </div>
 
 <!-- <fa-icon [icon]="faSun"></fa-icon>

@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FavouritesComponent } from "./favourites/favourites.component";
 import { MainComponent } from "./main/main.component";
 import { FavouriteItemComponent } from "./favourite-item/favourite-item.component";
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent } from "./details/details.component";
+import { AgmCoreModule } from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({ apiKey: "AIzaSyD81y8ZhPx2biBcyRohITwq9WxPoRMNIEk" })
   ],
   providers: [],
   bootstrap: [AppComponent]
