@@ -5,7 +5,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
   providedIn: "root"
 })
 export class WeatherService {
-  favouritesUrl = "https://api.openweathermap.org/data/2.5/weather";
+  url = "https://api.openweathermap.org/data/2.5/";
   apiKey = "8a49f18f401904376ca92de2c7ef2aa0";
   currentId: number;
 
@@ -17,17 +17,28 @@ export class WeatherService {
       .set("units", "metric")
       .set("appid", this.apiKey);
 
-    return this.http.get(this.favouritesUrl, { params });
+    return this.http.get(this.url + "weather", { params });
   }
 
-  getDetailedForcastById(id: number) {
-    return this.http.get(
-      `https://api.openweathermap.org/data/2.5/forecast?id=` +
-        id +
-        `&units=metric&appid=` +
-        this.apiKey
-    );
+  getWeatherByCityId(id: string) {
+    let params = new HttpParams()
+      .set("id", id)
+      .set("units", "metric")
+      .set("appid", this.apiKey)
+      .set("mode", "html");
+
+    return this.http.get(this.url + "weather", { params });
   }
+
+  getDetailedForcastById(id: string) {
+    let params = new HttpParams()
+      .set("id", id)
+      .set("units", "metric")
+      .set("appid", this.apiKey);
+
+    return this.http.get(this.url + "forecast", { params });
+  }
+
   getCurrentId() {
     return this.currentId;
   }

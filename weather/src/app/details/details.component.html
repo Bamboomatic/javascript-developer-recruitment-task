@@ -1,5 +1,7 @@
 <div>
-  <div class="city-name">Forecast for {{ forecast?.city.name }}</div>
+  <div class="city-name">
+    <h3>Forecast for {{ forecast?.city.name }}</h3>
+  </div>
   <table *ngFor="let fav of forecast?.list">
     <thead>
       <tr>
