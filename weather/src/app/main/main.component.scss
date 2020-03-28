@@ -11,7 +11,7 @@
 }
 
 .main-table {
-  width: 60vw;
+  width: 100vw;
   padding-top: 20px;
   th {
     background-color: rgb(174, 229, 255);
@@ -33,5 +33,23 @@
 }
 .map {
   width: 100%;
-  height: 200px;
+  height: 30vh;
+}
+
+@media (min-width: 640px) {
+  .main-table {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-table {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-table {
+    width: 70vw;
+  }
 }
