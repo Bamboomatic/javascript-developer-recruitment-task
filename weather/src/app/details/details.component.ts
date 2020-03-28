@@ -19,7 +19,6 @@ export class DetailsComponent implements OnInit {
   getForecast(id) {
     this.weatherService.getDetailedForcastById(id).subscribe(data => {
       this.forecast = data;
-      console.log("this forecast : " + this.forecast.list);
     });
   }
 }

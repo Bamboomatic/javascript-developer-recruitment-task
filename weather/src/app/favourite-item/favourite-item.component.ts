@@ -23,7 +23,7 @@ export class FavouriteItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onUnFav() {
-    console.log(this + " will be deleted by id nr:");
+  onUnFav(e) {
+    console.log(e);
   }
 }

@@ -1,5 +1,7 @@
-<div class="fav-city">
-  <span (click)="onUnFav()" class="unFavBtn">&times;</span>
+<div class="fav-city" id="1">
+  <span (click)="onUnFav($event.target.id)" class="unFavBtn" id="1"
+    >&times;</span
+  >
   <div>
     <p><fa-icon [icon]="faCity"></fa-icon></p>
     <p><fa-icon [icon]="faThermometerHalf"></fa-icon></p>

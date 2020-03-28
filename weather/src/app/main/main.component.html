@@ -21,7 +21,7 @@
           >
           </fa-icon>
           <b>{{ weather.name }}</b>
-          <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon
+          <fa-icon [icon]="faStar" (click)="toFavs(weather.id)"> </fa-icon
           ><span><- add to favourites</span>
         </th>
       </thead>
