@@ -6,7 +6,6 @@ import { WeatherService } from "../services/weather.service";
   providedIn: "root"
 })
 export class FavouritesService {
-  tempStorage;
   constructor(
     private storage: StorageMap,
     private weatherService: WeatherService
@@ -24,11 +23,28 @@ export class FavouritesService {
     console.log(" deleting fav by id ");
   }
 
-  addFav() {
+  addFav(id: string) {
+    let tempStorage: Array<string>;
     this.storage.get("favArr").subscribe(data => {
-      this.tempStorage = data;
+      tempStorage.push(data);
+      console.log("data: " + data);
     });
 
-    console.log(this?.tempStorage);
+    if (tempStorage.length === 0) {
+      console.log("temp is undefined");
+      tempStorage = [id];
+      console.log(
+        "temp is now defined = " + tempStorage + " and sent to local storage"
+      );
+      this.storage.set("favArr", tempStorage).subscribe(() => {});
+    } else {
+      console.log("temp is defined as: " + tempStorage);
+      console.log("temp will be updated with id = " + id);
+      tempStorage = [...tempStorage, id];
+      console.log(
+        "temp is now updated = " + tempStorage + " and sent to local storage"
+      );
+      this.storage.set("favArr", [...tempStorage, id]).subscribe(() => {});
+    }
   }
 }
