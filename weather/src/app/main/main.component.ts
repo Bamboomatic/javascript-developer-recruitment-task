@@ -58,8 +58,7 @@ export class MainComponent implements OnInit {
   }
 
   toFavs(weather) {
-    console.log(weather.name + " is going toFavs by id: " + weather.id);
-    this.favouriteService.addFav(weather.name);
+    this.favouriteService.addFav(weather.id.toString());
   }
 
   getCityName(city: string) {
