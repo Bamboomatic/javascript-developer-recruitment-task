@@ -1,3 +1,4 @@
 <div class="favourites-wrapper">
-  <app-favourite-item> </app-favourite-item>
+  <app-favourite-item *ngFor="let fav of favourites" [fav]="fav">
+  </app-favourite-item>
 </div>

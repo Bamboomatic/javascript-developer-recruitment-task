@@ -24,8 +24,7 @@ export class WeatherService {
     let params = new HttpParams()
       .set("id", id)
       .set("units", "metric")
-      .set("appid", this.apiKey)
-      .set("mode", "html");
+      .set("appid", this.apiKey);
 
     return this.http.get(this.url + "weather", { params });
   }

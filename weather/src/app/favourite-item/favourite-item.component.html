@@ -1,11 +1,11 @@
-<div class="fav-city" id="1">
-  <span (click)="onUnFav($event.target.id)" class="unFavBtn" id="1"
+<div class="fav-city">
+  <span (click)="onUnFav($event.target.id)" class="unFavBtn" id="{{ fav.id }}"
     >&times;</span
   >
   <div>
-    <p><fa-icon [icon]="faCity"></fa-icon></p>
-    <p><fa-icon [icon]="faThermometerHalf"></fa-icon></p>
-    <p><fa-icon [icon]="faTint"></fa-icon></p>
-    <p><fa-icon [icon]="faSun"></fa-icon></p>
+    <p><fa-icon [icon]="faCity"></fa-icon>{{ fav.name }}</p>
+    <p><fa-icon [icon]="faThermometerHalf"></fa-icon>{{ fav.temp }}</p>
+    <p><fa-icon [icon]="faTint"></fa-icon>{{ fav.humidity }}</p>
+    <p><fa-icon [icon]="faSun"></fa-icon>{{ fav.description }}</p>
   </div>
 </div>
