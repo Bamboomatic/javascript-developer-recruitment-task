@@ -55,7 +55,12 @@
       </tr>
     </table>
 
-    <agm-map class="map" [latitude]="lat" [longitude]="lon">
+    <agm-map
+      class="map"
+      [latitude]="lat"
+      [longitude]="lon"
+      (mapClick)="mapClick($event)"
+    >
       <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
     </agm-map>
   </div>

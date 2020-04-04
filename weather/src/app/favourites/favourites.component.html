@@ -1,4 +1,7 @@
-<div class="favourites-wrapper">
-  <app-favourite-item *ngFor="let fav of favourites" [fav]="fav">
-  </app-favourite-item>
+<div>
+  <nav><button (click)="sortAZ()">Sort by name</button></nav>
+  <div class="favourites-wrapper">
+    <app-favourite-item *ngFor="let fav of favourites" [fav]="fav">
+    </app-favourite-item>
+  </div>
 </div>

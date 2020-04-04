@@ -10,13 +10,13 @@ import {
   faTint,
   faSearchLocation,
   faInfo,
-  faStar
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-main",
   templateUrl: "./main.component.html",
-  styleUrls: ["./main.component.scss"]
+  styleUrls: ["./main.component.scss"],
 })
 export class MainComponent implements OnInit {
   lat;
@@ -38,21 +38,34 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCoordinates();
+    console.log("on init started!");
   }
 
   getCoordinates() {
+    console.log("geolocation" in navigator);
     if ("geolocation" in navigator) {
-      navigator.geolocation.watchPosition(success => {
+      navigator.geolocation.watchPosition((success) => {
         this.lat = success.coords.latitude;
         this.lon = success.coords.longitude;
         this.weatherService
           .getWeatherByCoordinates(this.lat, this.lon)
-          .subscribe(data => {
+          .subscribe((data) => {
             this.weather = data;
           });
       });
     }
   }
+
+  mapClick(event) {
+    this.lat = event.coords.lat;
+    this.lon = event.coords.lng;
+    this.weatherService
+      .getWeatherByCoordinates(this.lat, this.lon)
+      .subscribe((data) => {
+        this.weather = data;
+      });
+  }
+
   getCityId(id: number) {
     this.weatherService.passId(id);
   }
@@ -62,7 +75,7 @@ export class MainComponent implements OnInit {
   }
 
   getCityName(city: string) {
-    this.weatherService.getWeatherByCityName(city).subscribe(data => {
+    this.weatherService.getWeatherByCityName(city).subscribe((data) => {
       this.weather = data;
       this.lat = this.weather.coord.lat;
       this.lon = this.weather.coord.lon;
