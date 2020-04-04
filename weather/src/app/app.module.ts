@@ -11,6 +11,8 @@ import { MainComponent } from "./main/main.component";
 import { FavouriteItemComponent } from "./favourite-item/favourite-item.component";
 import { DetailsComponent } from "./details/details.component";
 import { AgmCoreModule } from "@agm/core";
+import { FocusTrapModule } from "primeng/focustrap";
+import { ButtonModule } from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { AgmCoreModule } from "@agm/core";
     FavouritesComponent,
     MainComponent,
     FavouriteItemComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,9 +28,13 @@ import { AgmCoreModule } from "@agm/core";
     FontAwesomeModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({ apiKey: "AIzaSyD81y8ZhPx2biBcyRohITwq9WxPoRMNIEk" })
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyD81y8ZhPx2biBcyRohITwq9WxPoRMNIEk",
+    }),
+    FocusTrapModule,
+    ButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,56 +1,56 @@
-.main-container {
-}
-.input {
-  min-width: 300px;
-  input {
-    width: 90%;
-  }
+// .main-container {
+// }
+// .input {
+//   min-width: 300px;
+//   input {
+//     width: 90%;
+//   }
 
-  button {
-    width: 10%;
-  }
-}
+//   button {
+//     width: 10%;
+//   }
+// }
 
-.main-table {
-  width: 100vw;
-  padding-top: 20px;
-  th {
-    background-color: rgb(174, 229, 255);
-  }
-  td {
-    border-radius: 2px;
-  }
-  tr:nth-child(odd) {
-    background-color: rgb(187, 233, 255);
-  }
-  b {
-    margin: 0 20px;
-    font-size: large;
-  }
-  span {
-    font: small lighter;
-    margin: 0 10px;
-  }
-}
-.map {
-  width: 100%;
-  height: 30vh;
-}
+// .main-table {
+//   width: 100vw;
+//   padding-top: 20px;
+//   th {
+//     background-color: rgb(174, 229, 255);
+//   }
+//   td {
+//     border-radius: 2px;
+//   }
+//   tr:nth-child(odd) {
+//     background-color: rgb(187, 233, 255);
+//   }
+//   b {
+//     margin: 0 20px;
+//     font-size: large;
+//   }
+//   span {
+//     font: small lighter;
+//     margin: 0 10px;
+//   }
+// }
+// .map {
+//   width: 100%;
+//   height: 30vh;
+// }
 
-@media (min-width: 640px) {
-  .main-table {
-    width: 90vw;
-  }
-}
+// @media (min-width: 640px) {
+//   .main-table {
+//     width: 90vw;
+//   }
+// }
 
-@media (min-width: 768px) {
-  .main-table {
-    width: 80vw;
-  }
-}
+// @media (min-width: 768px) {
+//   .main-table {
+//     width: 80vw;
+//   }
+// }
 
-@media (min-width: 1024px) {
-  .main-table {
-    width: 70vw;
-  }
-}
+// @media (min-width: 1024px) {
+//   .main-table {
+//     width: 70vw;
+//   }
+// }

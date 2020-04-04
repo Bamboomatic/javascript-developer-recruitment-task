@@ -12,7 +12,6 @@ import {
   faInfo,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
-
 @Component({
   selector: "app-main",
   templateUrl: "./main.component.html",

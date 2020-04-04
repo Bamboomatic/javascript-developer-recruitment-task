@@ -1,16 +1,25 @@
-<div class="main-container">
-  <div class="input">
-    <input type="text" #userInput placeholder="Enter City name here" /><button
-      class="inputBtn"
-      (click)="getCityName(userInput.value)"
-    >
-      <fa-icon [icon]="faSearchLocation"></fa-icon>
-    </button>
+<div>
+  <div class="ui-g ui-fluid">
+    <div class="ui-inputgroup" pFocusTrap>
+      <input
+        type="text"
+        #userInput
+        id="float-input"
+        placeholder="search for City Name"
+        pInputText
+        size="50"
+      />
+      <p-button
+        styleClass="ui-button-info"
+        icon="fa fa-search"
+        (click)="getCityName(userInput.value)"
+      ></p-button>
+    </div>
   </div>
   <div *ngIf="weather">
-    <table class="main-table">
+    <table>
       <thead>
-        <th colspan="2">
+        <th>
           <span>5-day detailed forecast -></span>
 
           <fa-icon
