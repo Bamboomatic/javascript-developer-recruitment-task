@@ -25,11 +25,11 @@
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.scss",
               "node_modules/primeflex/primeflex.scss",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeng/resources/themes/luna-blue/theme.css"
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },

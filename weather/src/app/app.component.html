@@ -1,16 +1,25 @@
-<div class="wrapper">
-  <div class="header">
-    <h1 class="title">Weather</h1>
-    <nav class="nav">
-      <a routerLink="/main" routerLinkActive="active"> Weather Main Page </a>
-      <a routerLink="/favourites" routerLinkActive="active">
-        Favourite Cities</a
-      >
+<div class="p-grid p-nogutter">
+  <div class="p-grid p-col-12">
+    <h2 class="p-col-12 header">Weatherly</h2>
+    <nav class="p-grid p-col-12 p-justify-center">
+      <p-button
+        label="Weather Main Page"
+        routerLink="/main"
+        routerLinkActive="active"
+        class="nav-button p-col-6 p-sm-5 p-md-4 p-lg-3"
+      ></p-button>
+      <p-button
+        label="Favourite Cities"
+        routerLink="/favourites"
+        routerLinkActive="active"
+        class="nav-button p-col-6 p-sm-5 p-md-4 p-lg-3"
+      ></p-button>
     </nav>
   </div>
-  <div [@routeAnimation]="getAnimationData(routerOutlet)">
-    <router-outlet #routerOutlet="outlet"></router-outlet>
+  <div
+    class="p-grid p-justify-center p-nogutter"
+    [@routeAnimation]="getAnimationData(routerOutlet)"
+  >
+    <router-outlet class="p-col-12" #routerOutlet="outlet"></router-outlet>
   </div>
-
-  <router-outlet></router-outlet>
 </div>
