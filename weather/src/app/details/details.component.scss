@@ -1,22 +1,38 @@
-// .city-name {
-//   font-size: large;
-//   h3 {
-//     text-align: center;
-//   }
-// }
+.city-name {
+  font-size: large;
+  h4,
+  h2 {
+    text-align: center;
+    margin: 0;
+    padding: 2px;
+  }
+}
 
-// table {
-//   width: 60vw;
-//   padding-top: 20px;
-//   th {
-//     background-color: rgb(174, 229, 255);
-//     font-weight: bold;
-//   }
-//   td {
-//     width: 50%;
-//     border-radius: 2px;
-//   }
-//   tr:nth-child(odd) {
-//     background-color: rgb(187, 233, 255);
-//   }
-// }
+table {
+  width: 90vw;
+  padding-top: 20px;
+  background-color: rgba(255, 250, 240, 0.315);
+  th {
+    background-color: rgba(255, 250, 240, 0.315);
+    font-weight: bold;
+  }
+  td {
+    width: 50%;
+    border-radius: 2px;
+  }
+  tr:hover {
+    background-color: rgba(255, 250, 240, 0.315);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  table {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  table {
+    width: 60vw;
+  }
+}

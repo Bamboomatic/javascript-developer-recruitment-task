@@ -1,8 +1,11 @@
-<div>
-  <div class="city-name">
-    <h3>Forecast for {{ forecast?.city.name }}</h3>
+<div class="p-grid p-justify-center">
+  <div class="city-name p-col-12">
+    <h4>
+      Forecast for
+    </h4>
+    <h2>{{ forecast?.city.name }}</h2>
   </div>
-  <table *ngFor="let fav of forecast?.list">
+  <table class="p-col-12" *ngFor="let fav of forecast?.list">
     <thead>
       <tr>
         <th colspan="2">{{ fav.dt_txt }}</th>

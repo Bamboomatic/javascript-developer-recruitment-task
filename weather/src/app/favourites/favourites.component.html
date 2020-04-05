@@ -1,7 +1,18 @@
-<div>
-  <nav><button (click)="sortAZ()">Sort by name</button></nav>
-  <div class="favourites-wrapper">
-    <app-favourite-item *ngFor="let fav of favourites" [fav]="fav">
+<div class="p-grid justify-content-center">
+  <nav class="p-col-12 text-center p-grid p-justify-center">
+    <button
+      pButton
+      label="Sort By name"
+      (click)="sortAZ()"
+      class="p-col ui-button-secondary p-sm-8 p-md-6 p-lg-4"
+    ></button>
+  </nav>
+  <div class="p-grid p-col-12">
+    <app-favourite-item
+      class="p-col-6 p-md-4 p-lg-3"
+      *ngFor="let fav of favourites"
+      [fav]="fav"
+    >
     </app-favourite-item>
   </div>
 </div>
