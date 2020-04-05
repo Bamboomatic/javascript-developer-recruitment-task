@@ -17,36 +17,36 @@
       ></p-button>
     </div>
   </div>
-  <div class="" *ngIf="weather">
-    <table>
-      <thead>
-        <th>
-          <span>5-day detailed forecast -></span>
+  <div class="main-container" *ngIf="weather">
+    <div class="p-grid p-justify-between">
+      <button
+        pButton
+        class="menu-icon p-col-1"
+        icon="fa fa-info"
+        (click)="getCityId(weather.id)"
+        routerLink="/details"
+        routerLinkActive="active"
+      ></button>
 
-          <fa-icon
-            [icon]="faInfo"
-            (click)="getCityId(weather.id)"
-            routerLink="/details"
-            routerLinkActive="active"
-          >
-          </fa-icon>
-          <b>{{ weather.name }}</b>
-          <fa-icon [icon]="faStar" (click)="toFavs(weather)"> </fa-icon
-          ><span><- add to favourites</span>
-        </th>
-      </thead>
-      <tr>
-        <td>Country prefix:</td>
-        <td>{{ weather.sys.country }}</td>
-      </tr>
-      <tr>
-        <td>Description:</td>
-        <td>{{ weather.weather[0].description }}</td>
-      </tr>
+      <div class="p-col name">{{ weather.name }}</div>
+      <button
+        pButton
+        class="menu-icon p-col-1"
+        icon="fa fa-star"
+        (click)="toFavs(weather)"
+      ></button>
+    </div>
+    <table>
       <tr>
         <td>Temperature:</td>
         <td>{{ weather.main.temp }}&#8451;</td>
       </tr>
+
+      <tr>
+        <td>Description:</td>
+        <td>{{ weather.weather[0].description }}</td>
+      </tr>
+
       <tr>
         <td>Pressure:</td>
         <td>{{ weather.main.pressure }}hPa</td>
@@ -58,6 +58,10 @@
       <tr>
         <td>Sunset:</td>
         <td>{{ weather.sys.sunset * 1000 | date: "H:mm" }}</td>
+      </tr>
+      <tr>
+        <td>Country prefix:</td>
+        <td>{{ weather.sys.country }}</td>
       </tr>
       <tr>
         <td>Coordinates:</td>

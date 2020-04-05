@@ -1,17 +1,20 @@
 html {
-  font-family: "Amatic SC", cursive;
+  font-family: "Muli", sans-serif;
 }
 
 body {
-  min-width: 400px;
+  min-width: 350px;
   min-height: 100vh;
-  background: rgb(0, 62, 249);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 62, 249, 0.4260206035539216) 0%,
-    rgba(122, 208, 255, 0.5016508556547619) 55%,
-    rgba(41, 169, 255, 0.29997018338585435) 100%
-  );
+  background-image: url(../src/assets/skybkgd.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(0, 62, 249, 0.4260206035539216) 0%,
+  //   rgba(122, 208, 255, 0.5016508556547619) 55%,
+  //   rgba(41, 169, 255, 0.29997018338585435) 100%
+  // );
 }
 
 .p-grid {
@@ -20,18 +23,15 @@ body {
 
 // styles for app.component
 
-.header {
+.header-h2 {
   font-family: "Muli", sans-serif;
-  font-weight: 600;
+  font-weight: bold;
   text-align: center;
   margin: 0px;
   padding: 4px 0px;
   border-radius: 3px;
   text-shadow: 0px 5px 10px rgb(191, 243, 250);
-  background-image: url(../src/assets/skyheader2.jpg);
-  background-size: cover;
-  box-shadow: 0px 0px 10px lightblue;
-  // change font! this is ugly
+  background-color: rgba(255, 250, 240, 0.315);
 }
 nav p-col-12 {
   padding: 2px;
@@ -41,12 +41,36 @@ nav p-col-12 {
   width: 100%;
 }
 
+body .menu-icon {
+  background-color: #007bd9a6;
+  border: none;
+  font-size: 12px;
+  margin: 5px;
+}
+
+table {
+  margin-bottom: 1em;
+  tr :nth-child(2) {
+    font-weight: bold;
+  }
+}
+.name {
+  font-family: "Muli", san-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 1px 0;
+}
+
 // styles for main.component
 
-// .map {
-//   width: 100%;
-//   height: 300px;
-// }
+.map {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 30vh;
+}
 
 @media screen and (max-width: 575px) {
   .p-col-6 {
