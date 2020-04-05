@@ -16,10 +16,7 @@
       ></p-button>
     </nav>
   </div>
-  <div
-    class="p-grid p-justify-center p-nogutter"
-    [@routeAnimation]="getAnimationData(routerOutlet)"
-  >
-    <router-outlet class="p-col-12" #routerOutlet="outlet"></router-outlet>
+  <div class="p-col-12" [@routeAnimation]="getAnimationData(routerOutlet)">
+    <router-outlet class="" #routerOutlet="outlet"></router-outlet>
   </div>
 </div>

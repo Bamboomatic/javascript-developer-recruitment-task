@@ -1,12 +1,14 @@
-<div class="p-grid p-justify-center p-nogutter p-col-12">
-  <div class="ui-g ui-fluid p-grid col-12">
-    <div class="ui-inputgroup p-justify-center" pFocusTrap>
+<div class="p-grid p-justify-center">
+  <div class="p-col-12">
+    <div class="ui-inputgroup p-grid p-justify-center" pFocusTrap>
       <input
+        class="p-col-10 p-sm-8 p-md-6 p-lg-4"
         type="text"
         #userInput
         id="float-input"
         placeholder="search for City Name"
         pInputText
+        (keydown.enter)="getCityName(userInput.value)"
       />
       <p-button
         styleClass="ui-button-info"
@@ -15,7 +17,7 @@
       ></p-button>
     </div>
   </div>
-  <div class="p-col-12" *ngIf="weather">
+  <div class="" *ngIf="weather">
     <table>
       <thead>
         <th>
