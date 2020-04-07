@@ -15,7 +15,7 @@
         id="float-input"
         pInputText
         placeholder="filter for City Name"
-        (keydown.enter)="filterName(sortNameInput.value)"
+        (keyup)="filterName(sortNameInput.value)"
       />
       <button
         pButton

@@ -28,6 +28,24 @@ export class FavouritesComponent implements OnInit {
     this.sorted = !this.sorted;
   }
   filterName(e) {
+    // console.log("favourites: " + this.favourites);
+
     console.log(e);
+
+    const filter = e.toLowerCase();
+
+    const cities = document.getElementsByClassName("fav-city");
+    let hits = 0;
+    console.log(cities.length);
+
+    for (let i = 0; i < cities.length; i++) {
+      if (cities[i].id.toLowerCase().indexOf(filter) > -1) {
+        cities[i].parentElement.classList.remove("hidden");
+        hits++;
+      } else {
+        cities[i].parentElement.classList.add("hidden");
+      }
+    }
+    console.log(hits + " records matched!");
   }
 }
