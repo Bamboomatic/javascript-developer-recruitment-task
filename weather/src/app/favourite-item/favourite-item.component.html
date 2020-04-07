@@ -1,5 +1,10 @@
 <div class="fav-city" id="{{ fav.name }}">
-  <span (click)="onUnFav($event.target.id)" class="unFavBtn" id="{{ fav.id }}"
+  <span
+    (click)="onUnFav($event.target.id)"
+    class="unFavBtn"
+    id="{{ fav.id }}"
+    pTooltip="remove"
+    tooltipPosition="top"
     >&times;</span
   >
   <div>
@@ -7,6 +12,7 @@
       (click)="showDetailsOnNameClick(fav.id)"
       routerLink="/details"
       routerLinkActive="active"
+      class="fav-city-name"
     >
       <fa-icon [icon]="faCity"></fa-icon>{{ fav.name }}
     </p>
