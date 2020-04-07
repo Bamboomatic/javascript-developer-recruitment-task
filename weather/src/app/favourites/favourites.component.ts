@@ -5,7 +5,7 @@ import { Fav } from "../models/Fav";
 @Component({
   selector: "app-favourites",
   templateUrl: "./favourites.component.html",
-  styleUrls: ["./favourites.component.scss"]
+  styleUrls: ["./favourites.component.scss"],
 })
 export class FavouritesComponent implements OnInit {
   favourites: Fav[];
@@ -26,5 +26,8 @@ export class FavouritesComponent implements OnInit {
       return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
     });
     this.sorted = !this.sorted;
+  }
+  filterName(e) {
+    console.log(e);
   }
 }

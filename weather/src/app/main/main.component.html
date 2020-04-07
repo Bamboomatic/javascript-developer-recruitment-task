@@ -26,6 +26,8 @@
         (click)="getCityId(weather.id)"
         routerLink="/details"
         routerLinkActive="active"
+        pTooltip="detailed 5-day Forecast"
+        tooltipPosition="left"
       ></button>
 
       <div class="p-col name">{{ weather.name }}</div>
@@ -34,6 +36,8 @@
         class="menu-icon p-col-1"
         icon="fa fa-star"
         (click)="toFavs(weather)"
+        pTooltip="add City to Favourites"
+        tooltipPosition="right"
       ></button>
     </div>
     <table>

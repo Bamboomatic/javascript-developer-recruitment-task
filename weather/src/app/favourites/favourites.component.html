@@ -1,12 +1,32 @@
-<div class="p-grid justify-content-center">
-  <nav class="p-col-12 text-center p-grid p-justify-center">
-    <button
-      pButton
-      label="Sort By name"
-      (click)="sortAZ()"
-      class="p-col ui-button-secondary p-sm-8 p-md-6 p-lg-4"
-    ></button>
-  </nav>
+<div class="p-grid p-justify-center">
+  <div class="p-col-12 p-grid p-justify-center">
+    <div class="ui-inputgroup p-col-12 p-sm-10 p-md-8 p-lg-6 p-grid">
+      <button
+        pButton
+        label="Sort A-Z"
+        (click)="sortAZ()"
+        class="ui-button-info p-col-fixed"
+        style="width: 100px;"
+      ></button>
+      <input
+        class="p-col"
+        type="text"
+        #sortNameInput
+        id="float-input"
+        pInputText
+        placeholder="filter for City Name"
+        (keydown.enter)="filterName(sortNameInput.value)"
+      />
+      <button
+        pButton
+        type="button"
+        class="ui-button-info p-col-fixed"
+        style="width: 50px;"
+        icon="fa fa-filter"
+        (click)="filterName(sortNameInput.value)"
+      ></button>
+    </div>
+  </div>
   <div class="p-grid p-col-12">
     <app-favourite-item
       class="p-col-6 p-md-4 p-lg-3"

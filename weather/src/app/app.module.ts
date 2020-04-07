@@ -13,6 +13,7 @@ import { DetailsComponent } from "./details/details.component";
 import { AgmCoreModule } from "@agm/core";
 import { FocusTrapModule } from "primeng/focustrap";
 import { ButtonModule } from "primeng/button";
+import { TooltipModule } from "primeng/tooltip";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ButtonModule } from "primeng/button";
     }),
     FocusTrapModule,
     ButtonModule,
+    TooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
