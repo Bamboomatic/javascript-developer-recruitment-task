@@ -1,5 +1,7 @@
 # Weatherly
 
+LIVE at: https://bamboomatic.github.io/javascript-developer-recruitment-task/
+
 This App uses OpenWeather API (https://openweathermap.org) to display current weather.
 By default (if user agree to share location) it loads current weather of closest city by coordinates and display this place in google maps.
 
