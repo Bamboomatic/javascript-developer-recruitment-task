@@ -36,12 +36,12 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getCoordinates();
-    console.log("on init started!");
+    if (this.weather === undefined) {
+      this.getCoordinates();
+    }
   }
 
   getCoordinates() {
-    console.log("geolocation" in navigator);
     if ("geolocation" in navigator) {
       navigator.geolocation.watchPosition((success) => {
         this.lat = success.coords.latitude;

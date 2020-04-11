@@ -7,17 +7,30 @@
     tooltipPosition="top"
     >&times;</span
   >
-  <div>
-    <p
-      (click)="showDetailsOnNameClick(fav.id)"
-      routerLink="/details"
-      routerLinkActive="active"
-      class="fav-city-name"
-    >
-      <fa-icon [icon]="faCity"></fa-icon>{{ fav.name }}
-    </p>
-    <p><fa-icon [icon]="faThermometerHalf"></fa-icon>{{ fav.temp }}</p>
-    <p><fa-icon [icon]="faTint"></fa-icon>{{ fav.humidity }}</p>
-    <p><fa-icon [icon]="faSun"></fa-icon>{{ fav.description }}</p>
+  <div class="p-grid p-dir-col">
+    <div class="p-col p-grid fav-city-name">
+      <div
+        (click)="showDetailsOnNameClick(fav.id)"
+        routerLink="/details"
+        routerLinkActive="active"
+        class="p-col-2 fav-city-name"
+      >
+        <fa-icon [icon]="faCity"></fa-icon>
+      </div>
+      <div class="p-col-10 fav-city-name">{{ fav.name }}</div>
+    </div>
+
+    <div class="p-col p-grid">
+      <div class="p-col-2 p-grid p-dir-col">
+        <div class="p-col"><fa-icon [icon]="faThermometerHalf"></fa-icon></div>
+        <div class="p-col"><fa-icon [icon]="faTint"></fa-icon></div>
+        <div class="p-col"><fa-icon [icon]="faSun"></fa-icon></div>
+      </div>
+      <div class="p-col-10 p-grid p-dir-col">
+        <div class="p-col">{{ fav.temp }} &#8451;</div>
+        <div class="p-col">{{ fav.humidity }} %</div>
+        <div class="p-col">{{ fav.description }}</div>
+      </div>
+    </div>
   </div>
 </div>
